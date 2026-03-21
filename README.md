@@ -1,8 +1,7 @@
 # Auditoría de Infraestructura Cloud — XPath Notebook
 
 **Módulo:** AEE – RA6 (Almacenamiento de información en formatos de intercambio de datos)  
-**Ciclo:** CFGS DAM — Desarrollo de Aplicaciones Multiplataforma  
-**Centro:** FP Superior Cámara de Comercio de Sevilla  
+**Ciclo:** 1 DAM — Desarrollo de Aplicaciones Multiplataforma  
 **Alumno:** Álvaro López de San Román  
 **Profesor:** Willman Acosta Lugo  
 
@@ -29,14 +28,6 @@ El objetivo es demostrar el uso de XPath como lenguaje de consulta sobre documen
 
 ---
 
-## Herramientas utilizadas
-
-- VS Code como editor principal
-- Extensión XPath Notebook de DeltaXML para ejecutar consultas XPath sobre el XML
-- GitHub para el control de versiones y entrega del proyecto
-
----
-
 ## Misiones de Auditoría
 
 ### Misión 1 — Mapeo de Seguridad (Navegación Absoluta/Relativa)
@@ -45,7 +36,7 @@ El objetivo es demostrar el uso de XPath como lenguaje de consulta sobre documen
 /catalogo_cloud/centro_datos[@ubicacion="Paris"]//servicio/@puerto
 ```
 
-Se utiliza una ruta absoluta desde la raíz del documento hasta `centro_datos`, filtrando por el atributo `ubicacion` con valor "Paris". Desde ahí se navega con `//` de forma relativa hasta todos los elementos `servicio` y se extrae su atributo `puerto`. Se usa `//` en lugar de la ruta exacta porque los servicios están anidados dentro de varias etiquetas intermedias.
+He utilizado una ruta absoluta desde la raíz del documento hasta `centro_datos`, filtrando por el atributo `ubicacion` con valor "Paris". Desde ahí se navega con `//` de forma relativa hasta todos los elementos `servicio` y se extrae su atributo `puerto`. He usado `//` en lugar de la ruta exacta porque los servicios están anidados dentro de varias etiquetas intermedias.
 
 **Resultado:** Se obtienen 3 puertos — `8888` (Jupyter Hub), `22` (OpenSSH) y `873` (Rsync), correspondientes a los dos servidores del centro de datos de París.
 
@@ -99,7 +90,7 @@ Se filtra el servidor que contenga un elemento `gpu` dentro de `hardware`, usand
 
 ---
 
-## Cómo reproducir las consultas
+## Cómo reproducir las consultas tal cual lo he hecho
 
 1. Clona o descarga este repositorio
 2. Abre la carpeta en VS Code
