@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="CatalogoCloud.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<!-- 
-  ========================================================
-  Módulo: LMSGI - CFGS DAM/DAW
-  Autor: Willman Acosta Lugo
-  Reto Práctico: Extracción Precisa con XPath
-  Archivo: catalogo.xml (Context Item para XPath Notebook)
-  ========================================================
--->
 <catalogo_cloud empresa="TechNova Cloud">
 
-    <!-- Data Center: Región Sur (Madrid) -->
     <centro_datos ubicacion="Madrid" zona="eu-sur-1">
 
         <servidor id="srv-web-01" rack="A1" estado="activo">
@@ -48,16 +39,12 @@
         </servidor>
 
     </centro_datos>
-
-    <!-- Data Center: Región Central (París) -->
     <centro_datos ubicacion="Paris" zona="eu-centro-1">
 
         <servidor id="srv-ia-01" rack="B1" estado="activo">
             <hardware>
                 <cpu nucleos="32" arquitectura="x86_64">AMD EPYC</cpu>
                 <ram unidad="GB">128</ram>
-                <!-- Ojo aquí: Este es el único servidor con GPU, ideal para filtrar por existencia
-                de nodo -->
                 <gpu modelo="NVIDIA A100" vram_gb="80">Tensor Core</gpu>
                 <discos>
                     <disco tipo="NVMe" capacidad_tb="4" principal="true" />
@@ -76,7 +63,6 @@
                 <cpu nucleos="8" arquitectura="x86_64">Intel Xeon Bronze</cpu>
                 <ram unidad="GB">32</ram>
                 <discos>
-                    <!-- Almacenamiento masivo pero mecánico (HDD) -->
                     <disco tipo="HDD" capacidad_tb="50" principal="true" />
                 </discos>
             </hardware>
