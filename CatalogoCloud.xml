@@ -1,80 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="CatalogoCloud.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-model href="CatalogoCloud_v2.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <catalogo_cloud empresa="TechNova Cloud">
-
+    
     <centro_datos ubicacion="Madrid" zona="eu-sur-1">
-
-        <servidor id="srv-web-01" rack="A1" estado="activo">
+        
+        <servidor id="srv-web-01" rack="A1" estado="activo" ubicacion="Madrid">
             <hardware>
                 <cpu nucleos="16" arquitectura="x86_64">Intel Xeon Gold</cpu>
                 <ram unidad="GB">64</ram>
                 <discos>
                     <disco tipo="NVMe" capacidad_tb="2" principal="true" />
-                    <disco tipo="SSD" capacidad_tb="4" principal="false" />
                 </discos>
             </hardware>
             <software>
                 <so version="22.04">Ubuntu Server</so>
                 <servicios>
                     <servicio puerto="80">Nginx HTTP</servicio>
-                    <servicio puerto="443">Nginx HTTPS</servicio>
                 </servicios>
             </software>
+            <identificacion>
+                <mac_address>00:1A:2B:3C:4D:5E</mac_address>
+            </identificacion>
         </servidor>
-
-        <servidor id="srv-db-01" rack="A2" estado="mantenimiento">
-            <hardware>
-                <cpu nucleos="64" arquitectura="ARM">Ampere Altra</cpu>
-                <ram unidad="GB">256</ram>
-                <discos>
-                    <disco tipo="NVMe" capacidad_tb="8" principal="true" />
-                </discos>
-            </hardware>
-            <software>
-                <so version="15">Debian GNU/Linux</so>
-                <servicios>
-                    <servicio puerto="5432">PostgreSQL</servicio>
-                </servicios>
-            </software>
-        </servidor>
-
-    </centro_datos>
-    <centro_datos ubicacion="Paris" zona="eu-centro-1">
-
-        <servidor id="srv-ia-01" rack="B1" estado="activo">
-            <hardware>
-                <cpu nucleos="32" arquitectura="x86_64">AMD EPYC</cpu>
-                <ram unidad="GB">128</ram>
-                <gpu modelo="NVIDIA A100" vram_gb="80">Tensor Core</gpu>
-                <discos>
-                    <disco tipo="NVMe" capacidad_tb="4" principal="true" />
-                </discos>
-            </hardware>
-            <software>
-                <so version="22.04">Ubuntu Server</so>
-                <servicios>
-                    <servicio puerto="8888">Jupyter Hub</servicio>
-                </servicios>
-            </software>
-        </servidor>
-
-        <servidor id="srv-backup-01" rack="B2" estado="apagado">
+        
+        <servidor id="srv-web-01" rack="A2" estado="apagado" ubicacion="Madrid">
             <hardware>
                 <cpu nucleos="8" arquitectura="x86_64">Intel Xeon Bronze</cpu>
                 <ram unidad="GB">32</ram>
                 <discos>
-                    <disco tipo="HDD" capacidad_tb="50" principal="true" />
+                    <disco tipo="HDD" capacidad_tb="4" principal="true" />
                 </discos>
             </hardware>
             <software>
                 <so version="9">CentOS Stream</so>
                 <servicios>
                     <servicio puerto="22">OpenSSH</servicio>
-                    <servicio puerto="873">Rsync</servicio>
                 </servicios>
             </software>
+            <identificacion>
+                <id_interno>NODE-002</id_interno>
+            </identificacion>
         </servidor>
-
+        
     </centro_datos>
-
+    
 </catalogo_cloud>
